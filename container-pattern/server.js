@@ -76,7 +76,7 @@ app.get("/books", (req, res) => res.json(books));
 
 app.get("/books/:id", (req, res) => {
   const { id } = req.params;
-  res.json(books.find((book) => book.id === id));
+  res.json(books[id] || null);
 });
 
 let SERVER_PORT = 9090;
