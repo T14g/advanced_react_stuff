@@ -1,12 +1,31 @@
-# React + Vite
+# Uncontrolled & Controlled Components Example (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto demonstra a diferença entre componentes controlados e não controlados (controlled e uncontrolled) em React, utilizando Vite para o setup do ambiente.
 
-Currently, two official plugins are available:
+## O que temos até agora
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **UncontrolledForm**: Um componente de formulário não controlado, que utiliza refs (`useRef`) para acessar os valores dos campos diretamente do DOM.
+- **ControlledForm**: Um componente de formulário controlado, que utiliza o estado do React (`useState`) para controlar os valores dos campos em tempo real.
+- **App.jsx**: Renderiza ambos os exemplos para fácil comparação.
 
-## Expanding the ESLint configuration
+## Como rodar o projeto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Instale as dependências:
+   ```bash
+   npm install
+   ```
+2. Rode o projeto:
+   ```bash
+   npm run dev
+   ```
+
+Acesse o endereço exibido no terminal para visualizar os exemplos.
+
+## Estrutura dos componentes
+
+- `src/components/UncontrolledForm.jsx`
+- `src/components/ControlledForm.jsx`
+
+## Objetivo
+
+Facilitar o entendimento prático das diferenças entre os padrões controlled e uncontrolled em formulários React.
