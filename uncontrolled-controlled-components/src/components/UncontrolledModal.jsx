@@ -1,4 +1,4 @@
-import React, { useImperativeHandle, useRef, useState, forwardRef } from "react";
+import React, { useState } from "react";
 
 const UncontrolledModal = () => {
     const [visible, setVisible] = useState(false);
@@ -8,7 +8,7 @@ const UncontrolledModal = () => {
             {visible && (<div style={{ background: "#fff", padding: 24, borderRadius: 8, minWidth: 300 }}>
                 <h2>Uncontrolled Modal</h2>
                 <p>Este modal é controlado internamente!</p>
-                <button  onClick={() => setVisible(false)}>Close Modal</button>
+                <button onClick={() => setVisible(false)}>Close Modal</button>
             </div>)}</>
     );
 };
