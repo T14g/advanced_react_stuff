@@ -1,19 +1,43 @@
 import { useState } from 'react'
-import { logProps } from './components/log-props'
-import { includeUser } from './components/include-user'
 import './App.css'
-import UserInfo from '../../container-pattern/src/components/user-info'
-
-const UserInfoWrapper = logProps(UserInfo)
-const UserIncludeWrapper = includeUser(UserInfo, "1234")
+import { UserInfoForm } from './components/user-form'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [user, setUser] = useState({
+    name: 'Sarah',
+    age: 30,
+    country: 'Brazil',
+    books: ['Book 1', 'Book 2']
+  });
+
+  const onChangeUser = (updates) => {
+    setUser((prev) => ({ ...prev, ...updates }));
+  };
+
+  const onPostUser = () => {
+    // Simula um post e salva o usuário (poderia ser um fetch/axios real)
+    setTimeout(() => {
+      alert('Usuário salvo!');
+    }, 500);
+  };
+
+  const onResetUser = () => {
+    setUser({
+      name: 'Sarah',
+      age: 30,
+      country: 'Brazil',
+      books: ['Book 1', 'Book 2']
+    });
+  };
 
   return (
     <>
-      {/* <UserInfoWrapper test="1234" user={{ name: 'Sarah', age: 30, country: 'Brazil', books: ['Book 1', 'Book 2'] }} /> */}
-      <UserIncludeWrapper />
+      <UserInfoForm
+        user={user}
+        onChangeUser={onChangeUser}
+        onPostUser={onPostUser}
+        onResetUser={onResetUser}
+      />
     </>
   )
 }
